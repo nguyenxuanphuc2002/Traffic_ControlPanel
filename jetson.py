@@ -37,7 +37,7 @@ def vehicleError(licencePlate, error, time_utc = None ):
     if time_utc != None:
         time_ = time_utc
     else:
-        time_utc = datetime.now()
+        time_utc = datetime.utcnow()
     db.collection('Vipham').add({'License plate': plate,'Error': error_,'Time': time_utc})
 
 biensoxe = input("Nhập biển số xe: ")
