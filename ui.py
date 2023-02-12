@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'untitled.ui'
+# App implementation generated from reading ui file 'untitled.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -10,15 +10,15 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
-from qtwidgets import PasswordEdit
+# from qtwidgets import PasswordEdit
 
 class Ui_App(object):
     def setupUi(self,App):
         App.setObjectName("App")
         App.resize(1920, 1080)
         #Login client
-        App.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        App.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        # App.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        # App.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.widget = QtWidgets.QWidget(App)
         self.widget.setGeometry(QtCore.QRect(610, 70, 641, 741))
         self.widget.setStyleSheet("border-radius:50px;\n"
@@ -122,193 +122,2058 @@ class Ui_App(object):
         self.Showpassword.setIcon(icon1)
         self.Showpassword.setObjectName("Showpassword")
     
-        #dashboard client
+####################################dashboard client###########################################################################333
+        App.setObjectName("App")
+        App.setWindowModality(QtCore.Qt.NonModal)
+        App.setEnabled(True)
+        App.resize(1918, 1080)
+        App.setMouseTracking(True)
+        App.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.dashboard = QtWidgets.QWidget(App)
-        self.dashboard.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
-        self.dashboard.setStyleSheet("background-color: none;")
         self.dashboard.setObjectName("dashboard")
-        self.widget1 = QtWidgets.QWidget(self.dashboard)
-        self.widget1.setGeometry(QtCore.QRect(0, 20, 501, 1080))
-        self.widget1.setStyleSheet("background-color: #D9D9D9;")
-        self.widget1.setObjectName("widget")
-        self.helloText = QtWidgets.QLabel(self.widget1)
-        self.helloText.setGeometry(QtCore.QRect(38, 45, 422, 73))
+        self.ToolBar = QtWidgets.QWidget(self.dashboard)
+        self.ToolBar.setGeometry(QtCore.QRect(0, 0, 1920, 71))
+        self.ToolBar.setStyleSheet("background-color: rgb(68, 68, 68)")
+        self.ToolBar.setObjectName("ToolBar")
+        self.toolBtn_Widget = QtWidgets.QWidget(self.ToolBar)
+        self.toolBtn_Widget.setGeometry(QtCore.QRect(1770, 10, 131, 41))
+        self.toolBtn_Widget.setStyleSheet("background-color: rgb(0, 0, 0);\n"
+"border-radius: 15px;\n"
+"")
+        self.toolBtn_Widget.setObjectName("toolBtn_Widget")
+        self.closeBtn = QtWidgets.QPushButton(self.toolBtn_Widget)
+        self.closeBtn.setGeometry(QtCore.QRect(100, 10, 24, 24))
+        self.closeBtn.setStyleSheet("QPushButton#closeBtn:hover:!pressed\n"
+"{\n"
+"      background-color: rgb(167, 30, 30);\n"
+"}\n"
+"QPushButton#closeBtn {\n"
+"    background-color: rgb(220, 60, 60);\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"")
+        self.closeBtn.setText("")
+        self.closeBtn.setObjectName("closeBtn")
+        self.maximizeBtn = QtWidgets.QPushButton(self.toolBtn_Widget)
+        self.maximizeBtn.setGeometry(QtCore.QRect(57, 10, 24, 24))
+        self.maximizeBtn.setStyleSheet("background-color: rgb(154, 154, 154);\n"
+"border-radius: 12px;")
+        self.maximizeBtn.setText("")
+        self.maximizeBtn.setObjectName("maximizeBtn")
+        self.minimizeBtn = QtWidgets.QPushButton(self.toolBtn_Widget)
+        self.minimizeBtn.setGeometry(QtCore.QRect(10, 10, 24, 24))
+        self.minimizeBtn.setStyleSheet("background-color: rgb(154, 154, 154);\n"
+"border-radius: 12px;")
+        self.minimizeBtn.setText("")
+        self.minimizeBtn.setObjectName("minimizeBtn")
+        self.dashboard_Tab = QtWidgets.QTabWidget(self.dashboard)
+        self.dashboard_Tab.setGeometry(QtCore.QRect(0, 40, 1920, 1040))
         font = QtGui.QFont()
-        font.setPointSize(13)
-        self.helloText.setFont(font)
-        self.helloText.setStyleSheet("background-color: #AAAAAA;\n"
-"border-radius:25px;")
-        self.helloText.setAlignment(QtCore.Qt.AlignCenter)
-        self.helloText.setObjectName("helloText")
-        self.nameInfor = QtWidgets.QLabel(self.widget1)
-        self.nameInfor.setGeometry(QtCore.QRect(38, 170, 422, 73))
-        font = QtGui.QFont()
-        font.setPointSize(13)
-        self.nameInfor.setFont(font)
-        self.nameInfor.setStyleSheet("background-color: #AAAAAA;\n"
-"border-radius:25px;")
-        self.nameInfor.setAlignment(QtCore.Qt.AlignCenter)
-        self.nameInfor.setObjectName("nameInfor")
-        self.dateofbirthInfor = QtWidgets.QLabel(self.widget1)
-        self.dateofbirthInfor.setGeometry(QtCore.QRect(38, 295, 422, 73))
-        font = QtGui.QFont()
-        font.setPointSize(13)
-        self.dateofbirthInfor.setFont(font)
-        self.dateofbirthInfor.setStyleSheet("background-color: #AAAAAA;\n"
-"border-radius:25px;")
-        self.dateofbirthInfor.setAlignment(QtCore.Qt.AlignCenter)
-        self.dateofbirthInfor.setObjectName("dateofbirthInfor")
-        self.logoutButton = QtWidgets.QPushButton(self.widget1)
-        self.logoutButton.setGeometry(QtCore.QRect(38, 860, 422, 60))
-        font = QtGui.QFont()
+        font.setFamily("Tahoma")
         font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.logoutButton.setFont(font)
-        self.logoutButton.setStyleSheet("background-color: #78A9CA;\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:25px;")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("static/iconDashboard/icons8-logout-50.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.logoutButton.setIcon(icon)
-        self.logoutButton.setObjectName("logoutButton")
-        self.fieldListbtn = QtWidgets.QWidget(self.dashboard)
-        self.fieldListbtn.setGeometry(QtCore.QRect(500, 20, 1421, 1080))
-        self.fieldListbtn.setStyleSheet("background-color: #656464;")
-        self.fieldListbtn.setObjectName("fieldListbtn")
-        self.btnlListcam_icon = QtWidgets.QWidget(self.fieldListbtn)
-        self.btnlListcam_icon.setGeometry(QtCore.QRect(90, 50, 321, 161))
-        self.btnlListcam_icon.setStyleSheet("background-color:none;")
-        self.btnlListcam_icon.setObjectName("btnlListcam_icon")
-        self.listcamPage = QtWidgets.QPushButton(self.btnlListcam_icon)
-        self.listcamPage.setGeometry(QtCore.QRect(0, 50, 321, 101))
+        self.dashboard_Tab.setFont(font)
+        self.dashboard_Tab.setStyleSheet("background-color: rgb(132, 131, 131);\n"
+"border:none;\n"
+"")
+        self.dashboard_Tab.setTabShape(QtWidgets.QTabWidget.Rounded)
+        self.dashboard_Tab.setIconSize(QtCore.QSize(25, 16))
+        self.dashboard_Tab.setTabBarAutoHide(True)
+        self.dashboard_Tab.setObjectName("dashboard_Tab")
+        self.mainDashboard = QtWidgets.QWidget()
+        self.mainDashboard.setObjectName("mainDashboard")
+        self.nameInFor = QtWidgets.QWidget(self.mainDashboard)
+        self.nameInFor.setGeometry(QtCore.QRect(0, 0, 501, 1021))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.nameInFor.setFont(font)
+        self.nameInFor.setStyleSheet("background-color: rgb(217, 217, 217)")
+        self.nameInFor.setObjectName("nameInFor")
+        self.helloText = QtWidgets.QLabel(self.nameInFor)
+        self.helloText.setGeometry(QtCore.QRect(40, 50, 391, 71))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(True)
+        font.setStyleStrategy(QtGui.QFont.NoAntialias)
+        self.helloText.setFont(font)
+        self.helloText.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.helloText.setAutoFillBackground(False)
+        self.helloText.setStyleSheet("background-color: #AAAAAA;\n"
+"color: rgba(0,0,0,200);\n"
+"border-radius: 25px")
+        self.helloText.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.helloText.setTextFormat(QtCore.Qt.AutoText)
+        self.helloText.setAlignment(QtCore.Qt.AlignCenter)
+        self.helloText.setWordWrap(False)
+        self.helloText.setObjectName("helloText")
+        self.nameInfo = QtWidgets.QLabel(self.nameInFor)
+        self.nameInfo.setGeometry(QtCore.QRect(40, 160, 391, 71))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(True)
+        font.setStyleStrategy(QtGui.QFont.NoAntialias)
+        self.nameInfo.setFont(font)
+        self.nameInfo.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.nameInfo.setStyleSheet("background-color: #AAAAAA;\n"
+"color: rgba(0,0,0,200);\n"
+"border-radius: 25px")
+        self.nameInfo.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.nameInfo.setAlignment(QtCore.Qt.AlignCenter)
+        self.nameInfo.setObjectName("nameInfo")
+        self.emailLabel = QtWidgets.QLabel(self.nameInFor)
+        self.emailLabel.setGeometry(QtCore.QRect(40, 280, 391, 71))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(True)
+        font.setStyleStrategy(QtGui.QFont.NoAntialias)
+        self.emailLabel.setFont(font)
+        self.emailLabel.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.emailLabel.setStyleSheet("background-color: #AAAAAA;\n"
+"color: rgba(0,0,0,200);\n"
+"border-radius: 25px")
+        self.emailLabel.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.emailLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.emailLabel.setObjectName("emailLabel")
+        self.logoutBtn = QtWidgets.QPushButton(self.nameInFor)
+        self.logoutBtn.setGeometry(QtCore.QRect(40, 865, 391, 71))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.logoutBtn.setFont(font)
+        self.logoutBtn.setStyleSheet("background-color: #78A9CA;\n"
+"color: rgba(225,225,225);\n"
+"border-radius: 25px")
+        self.logoutBtn.setObjectName("logoutBtn")
+        self.dateofbirthLabel = QtWidgets.QLabel(self.nameInFor)
+        self.dateofbirthLabel.setGeometry(QtCore.QRect(40, 400, 391, 71))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(True)
+        font.setStyleStrategy(QtGui.QFont.NoAntialias)
+        self.dateofbirthLabel.setFont(font)
+        self.dateofbirthLabel.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.dateofbirthLabel.setStyleSheet("background-color: #AAAAAA;\n"
+"color: rgba(0,0,0,200);\n"
+"border-radius: 25px")
+        self.dateofbirthLabel.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.dateofbirthLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.dateofbirthLabel.setObjectName("dateofbirthLabel")
+        self.fieldListBtn = QtWidgets.QWidget(self.mainDashboard)
+        self.fieldListBtn.setGeometry(QtCore.QRect(501, 0, 1419, 1021))
+        self.fieldListBtn.setObjectName("fieldListBtn")
+        self.btnListcam_icon = QtWidgets.QWidget(self.fieldListBtn)
+        self.btnListcam_icon.setGeometry(QtCore.QRect(90, 50, 321, 211))
+        self.btnListcam_icon.setObjectName("btnListcam_icon")
+        self.listcamPage = QtWidgets.QPushButton(self.btnListcam_icon)
+        self.listcamPage.setGeometry(QtCore.QRect(0, 50, 321, 161))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
         font.setWeight(75)
         self.listcamPage.setFont(font)
-        self.listcamPage.setStyleSheet("background-color:#B4B4B4;\n"
-"border-radius:25px;\n"
-"color:rgb(255, 255, 255)")
-        self.listcamPage.setObjectName("listcamPage")
-        self.iconListcambtn = QtWidgets.QPushButton(self.btnlListcam_icon)
-        self.iconListcambtn.setGeometry(QtCore.QRect(30, 0, 80, 80))
-        self.iconListcambtn.setStyleSheet("background-color:#35B4F9;\n"
-"border-radius:25px")
-        self.iconListcambtn.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("static/iconDashboard/icons8-list-26.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.iconListcambtn.setIcon(icon1)
-        self.iconListcambtn.setIconSize(QtCore.QSize(24, 24))
-        self.iconListcambtn.setObjectName("iconListcambtn")
-        self.btnlListvideovolation_icon = QtWidgets.QWidget(self.fieldListbtn)
-        self.btnlListvideovolation_icon.setGeometry(QtCore.QRect(550, 50, 321, 161))
-        self.btnlListvideovolation_icon.setStyleSheet("background-color:none;")
-        self.btnlListvideovolation_icon.setObjectName("btnlListvideovolation_icon")
-        self.videoviolationPage = QtWidgets.QPushButton(self.btnlListvideovolation_icon)
-        self.videoviolationPage.setGeometry(QtCore.QRect(0, 50, 321, 101))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        font.setBold(True)
-        font.setWeight(75)
-        self.videoviolationPage.setFont(font)
-        self.videoviolationPage.setStyleSheet("background-color:#B4B4B4;\n"
-"border-radius:25px;\n"
-"color:rgb(255, 255, 255)")
-        self.videoviolationPage.setObjectName("videoviolationPage")
-        self.iconListvideoviolationbtn = QtWidgets.QPushButton(self.btnlListvideovolation_icon)
-        self.iconListvideoviolationbtn.setGeometry(QtCore.QRect(30, 0, 80, 80))
-        self.iconListvideoviolationbtn.setStyleSheet("background-color:rgb(255, 0, 0);\n"
-"border-radius:25px")
-        self.iconListvideoviolationbtn.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("static/iconDashboard/icons8-cinema-44.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.iconListvideoviolationbtn.setIcon(icon2)
-        self.iconListvideoviolationbtn.setIconSize(QtCore.QSize(28, 28))
-        self.iconListvideoviolationbtn.setObjectName("iconListvideoviolationbtn")
-        self.btnlChart_icon = QtWidgets.QWidget(self.fieldListbtn)
-        self.btnlChart_icon.setGeometry(QtCore.QRect(1010, 50, 321, 161))
-        self.btnlChart_icon.setStyleSheet("background-color:none;")
-        self.btnlChart_icon.setObjectName("btnlChart_icon")
-        self.ChartPage = QtWidgets.QPushButton(self.btnlChart_icon)
-        self.ChartPage.setGeometry(QtCore.QRect(0, 50, 321, 101))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        font.setBold(True)
-        font.setWeight(75)
-        self.ChartPage.setFont(font)
-        self.ChartPage.setStyleSheet("background-color:#B4B4B4;\n"
-"border-radius:25px;\n"
-"color:rgb(255, 255, 255)")
-        self.ChartPage.setObjectName("ChartPage")
-        self.iconChartbtn = QtWidgets.QPushButton(self.btnlChart_icon)
-        self.iconChartbtn.setGeometry(QtCore.QRect(30, 0, 80, 80))
-        self.iconChartbtn.setStyleSheet("background-color:#00CD21;\n"
-"border-radius:25px")
-        self.iconChartbtn.setText("")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("static/iconDashboard/icons8-histogram-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.iconChartbtn.setIcon(icon3)
-        self.iconChartbtn.setIconSize(QtCore.QSize(28, 28))
-        self.iconChartbtn.setObjectName("iconChartbtn")
-        self.btnCreateaccout_icon = QtWidgets.QWidget(self.fieldListbtn)
-        self.btnCreateaccout_icon.setGeometry(QtCore.QRect(90, 260, 321, 161))
-        self.btnCreateaccout_icon.setStyleSheet("background-color:none;")
-        self.btnCreateaccout_icon.setObjectName("btnCreateaccout_icon")
-        self.createaccountPage = QtWidgets.QPushButton(self.btnCreateaccout_icon)
-        self.createaccountPage.setGeometry(QtCore.QRect(0, 50, 321, 101))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        font.setBold(True)
-        font.setWeight(75)
-        self.createaccountPage.setFont(font)
-        self.createaccountPage.setStyleSheet("background-color:#B4B4B4;\n"
-"border-radius:25px;\n"
-"color:rgb(255, 255, 255)")
-        self.createaccountPage.setObjectName("createaccountPage")
-        self.iconCreateaccountbtn = QtWidgets.QPushButton(self.btnCreateaccout_icon)
-        self.iconCreateaccountbtn.setGeometry(QtCore.QRect(30, 0, 80, 80))
-        self.iconCreateaccountbtn.setStyleSheet("background-color:rgb(44, 83, 255);\n"
-"border-radius:25px;\n"
+        self.listcamPage.setStyleSheet("background-color: rgb(180, 180, 180);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 25px\n"
 "")
-        self.iconCreateaccountbtn.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("static/iconDashboard/icons8-add-user-male-50.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.iconCreateaccountbtn.setIcon(icon4)
-        self.iconCreateaccountbtn.setIconSize(QtCore.QSize(28, 28))
-        self.iconCreateaccountbtn.setObjectName("iconCreateaccountbtn")
-        self.frame = QtWidgets.QFrame(self.dashboard)
-        self.frame.setGeometry(QtCore.QRect(-1, 0, 1921, 26))
-        self.frame.setStyleSheet("background-color: rgb(90,90,90);")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
-        self.widget_7 = QtWidgets.QWidget(self.frame)
-        self.widget_7.setGeometry(QtCore.QRect(1830, 0, 81, 26))
-        self.widget_7.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-"border-radius:12px;")
-        self.widget_7.setObjectName("widget_7")
-        self.MinimunBtn = QtWidgets.QPushButton(self.widget_7)
-        self.MinimunBtn.setGeometry(QtCore.QRect(10, 1, 24, 24))
-        self.MinimunBtn.setStyleSheet("background-color: rgb(140,140,140);\n"
-"border-radius:12px")
-        self.MinimunBtn.setText("")
-        iconMin = QtGui.QIcon()
-        iconMin.addPixmap(QtGui.QPixmap("static/icon/minimum-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.MinimunBtn.setIcon(iconMin)
-        self.MinimunBtn.setObjectName("MinimunBtn")
-        self.CloseBtn = QtWidgets.QPushButton(self.widget_7)
-        self.CloseBtn.setGeometry(QtCore.QRect(50, 1, 24, 24))
-        self.CloseBtn.setStyleSheet("background-color: rgb(239, 0, 0);\n"
-"border-radius:12px")
-        self.CloseBtn.setText("")
-        iconClose = QtGui.QIcon()
-        iconClose.addPixmap(QtGui.QPixmap("static/icon/times-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.CloseBtn.setIcon(iconClose)
-        self.CloseBtn.setObjectName("CloseBtn")
+        self.listcamPage.setObjectName("listcamPage")
+        self.iconListcambtn = QtWidgets.QPushButton(self.btnListcam_icon)
+        self.iconListcambtn.setGeometry(QtCore.QRect(30, 0, 80, 80))
+        self.iconListcambtn.setStyleSheet("background-color: #35B4F9;\n"
+"border-radius: 25px\n"
+"")
+        self.iconListcambtn.setText("")
+        self.iconListcambtn.setObjectName("iconListcambtn")
+        self.btnListVideoViolation_icon = QtWidgets.QWidget(self.fieldListBtn)
+        self.btnListVideoViolation_icon.setGeometry(QtCore.QRect(550, 50, 321, 211))
+        self.btnListVideoViolation_icon.setObjectName("btnListVideoViolation_icon")
+        self.videoViolationPage = QtWidgets.QPushButton(self.btnListVideoViolation_icon)
+        self.videoViolationPage.setGeometry(QtCore.QRect(0, 50, 321, 161))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.videoViolationPage.setFont(font)
+        self.videoViolationPage.setStyleSheet("background-color: rgb(180, 180, 180);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 25px\n"
+"")
+        self.videoViolationPage.setObjectName("videoViolationPage")
+        self.iconListVideoViolationbtn = QtWidgets.QPushButton(self.btnListVideoViolation_icon)
+        self.iconListVideoViolationbtn.setGeometry(QtCore.QRect(30, 0, 80, 80))
+        self.iconListVideoViolationbtn.setStyleSheet("background-color: rgb(255, 0, 0);\n"
+"border-radius: 25px\n"
+"")
+        self.iconListVideoViolationbtn.setText("")
+        self.iconListVideoViolationbtn.setObjectName("iconListVideoViolationbtn")
+        self.btnChart_icon = QtWidgets.QWidget(self.fieldListBtn)
+        self.btnChart_icon.setGeometry(QtCore.QRect(1010, 50, 321, 211))
+        self.btnChart_icon.setObjectName("btnChart_icon")
+        self.chartPage = QtWidgets.QPushButton(self.btnChart_icon)
+        self.chartPage.setGeometry(QtCore.QRect(0, 50, 321, 161))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.chartPage.setFont(font)
+        self.chartPage.setStyleSheet("background-color: rgb(180, 180, 180);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 25px\n"
+"")
+        self.chartPage.setObjectName("chartPage")
+        self.iconChartbtn = QtWidgets.QPushButton(self.btnChart_icon)
+        self.iconChartbtn.setGeometry(QtCore.QRect(30, 0, 80, 80))
+        self.iconChartbtn.setStyleSheet("background-color: rgb(0, 205, 33);\n"
+"border-radius: 25px\n"
+"")
+        self.iconChartbtn.setText("")
+        self.iconChartbtn.setObjectName("iconChartbtn")
+        self.btnCreateAccoun_icon = QtWidgets.QWidget(self.fieldListBtn)
+        self.btnCreateAccoun_icon.setGeometry(QtCore.QRect(90, 300, 321, 211))
+        self.btnCreateAccoun_icon.setObjectName("btnCreateAccoun_icon")
+        self.createAccountPage = QtWidgets.QPushButton(self.btnCreateAccoun_icon)
+        self.createAccountPage.setGeometry(QtCore.QRect(0, 50, 321, 161))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.createAccountPage.setFont(font)
+        self.createAccountPage.setStyleSheet("background-color: rgb(180, 180, 180);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 25px\n"
+"")
+        self.createAccountPage.setObjectName("createAccountPage")
+        self.iconListcambtn_6 = QtWidgets.QPushButton(self.btnCreateAccoun_icon)
+        self.iconListcambtn_6.setGeometry(QtCore.QRect(30, 0, 80, 80))
+        self.iconListcambtn_6.setStyleSheet("background-color: rgb(44, 83, 255);\n"
+"border-radius: 25px\n"
+"")
+        self.iconListcambtn_6.setText("")
+        self.iconListcambtn_6.setObjectName("iconListcambtn_6")
+        self.dashboard_Tab.addTab(self.mainDashboard, "")
+        self.violationPage = QtWidgets.QWidget()
+        self.violationPage.setObjectName("violationPage")
+        self.filterWidget = QtWidgets.QWidget(self.violationPage)
+        self.filterWidget.setGeometry(QtCore.QRect(0, 0, 481, 1021))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.filterWidget.setFont(font)
+        self.filterWidget.setStyleSheet("background-color: rgb(119, 161, 184)")
+        self.filterWidget.setObjectName("filterWidget")
+        self.filterHeader = QtWidgets.QLabel(self.filterWidget)
+        self.filterHeader.setGeometry(QtCore.QRect(40, 0, 391, 71))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(16)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(True)
+        font.setStyleStrategy(QtGui.QFont.NoAntialias)
+        self.filterHeader.setFont(font)
+        self.filterHeader.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.filterHeader.setAutoFillBackground(False)
+        self.filterHeader.setStyleSheet("background-color: none;\n"
+"color: rgba(0,0,0,240);\n"
+"border-radius: 25px")
+        self.filterHeader.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.filterHeader.setTextFormat(QtCore.Qt.AutoText)
+        self.filterHeader.setAlignment(QtCore.Qt.AlignCenter)
+        self.filterHeader.setWordWrap(False)
+        self.filterHeader.setObjectName("filterHeader")
+        self.searchBtn = QtWidgets.QPushButton(self.filterWidget)
+        self.searchBtn.setGeometry(QtCore.QRect(40, 860, 391, 71))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.searchBtn.setFont(font)
+        self.searchBtn.setStyleSheet("background-color: rgb(67, 145, 198);\n"
+"border-radius: 25px")
+        self.searchBtn.setObjectName("searchBtn")
+        self.lineEdit = QtWidgets.QLineEdit(self.filterWidget)
+        self.lineEdit.setGeometry(QtCore.QRect(40, 70, 381, 51))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.lineEdit.setFont(font)
+        self.lineEdit.setStyleSheet("background-color: rgb(217, 217, 217);\n"
+"border-radius: 5px;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"color:rgba(0, 0, 0, 240);\n"
+"padding-left: 5px;\n"
+"")
+        self.lineEdit.setText("")
+        self.lineEdit.setObjectName("lineEdit")
+        self.filterListBtn = QtWidgets.QWidget(self.filterWidget)
+        self.filterListBtn.setGeometry(QtCore.QRect(0, 130, 481, 171))
+        self.filterListBtn.setObjectName("filterListBtn")
+        self.label = QtWidgets.QLabel(self.filterListBtn)
+        self.label.setGeometry(QtCore.QRect(20, 10, 91, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label.setFont(font)
+        self.label.setStyleSheet("color: rgb(255, 255, 255)")
+        self.label.setObjectName("label")
+        self.radioButton = QtWidgets.QRadioButton(self.filterListBtn)
+        self.radioButton.setGeometry(QtCore.QRect(20, 50, 161, 17))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.radioButton.setFont(font)
+        self.radioButton.setStyleSheet("color: rgb(255, 255, 255)")
+        self.radioButton.setIconSize(QtCore.QSize(20, 20))
+        self.radioButton.setObjectName("radioButton")
+        self.radioButton_2 = QtWidgets.QRadioButton(self.filterListBtn)
+        self.radioButton_2.setGeometry(QtCore.QRect(20, 90, 161, 17))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.radioButton_2.setFont(font)
+        self.radioButton_2.setStyleSheet("color: rgb(255, 255, 255)")
+        self.radioButton_2.setIconSize(QtCore.QSize(20, 20))
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.radioButton_3 = QtWidgets.QRadioButton(self.filterListBtn)
+        self.radioButton_3.setGeometry(QtCore.QRect(20, 120, 191, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.radioButton_3.setFont(font)
+        self.radioButton_3.setStyleSheet("color: rgb(255, 255, 255)")
+        self.radioButton_3.setIconSize(QtCore.QSize(20, 20))
+        self.radioButton_3.setObjectName("radioButton_3")
+        self.timeFilterList = QtWidgets.QWidget(self.filterWidget)
+        self.timeFilterList.setGeometry(QtCore.QRect(0, 300, 481, 221))
+        self.timeFilterList.setObjectName("timeFilterList")
+        self.timeFilter_label = QtWidgets.QLabel(self.timeFilterList)
+        self.timeFilter_label.setGeometry(QtCore.QRect(20, 10, 441, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.timeFilter_label.setFont(font)
+        self.timeFilter_label.setStyleSheet("color: rgb(255, 255, 255)")
+        self.timeFilter_label.setObjectName("timeFilter_label")
+        self.dayFilter = QtWidgets.QRadioButton(self.timeFilterList)
+        self.dayFilter.setGeometry(QtCore.QRect(20, 50, 161, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.dayFilter.setFont(font)
+        self.dayFilter.setStyleSheet("color: rgb(255, 255, 255)")
+        self.dayFilter.setIconSize(QtCore.QSize(20, 20))
+        self.dayFilter.setObjectName("dayFilter")
+        self.weekFilter = QtWidgets.QRadioButton(self.timeFilterList)
+        self.weekFilter.setGeometry(QtCore.QRect(20, 90, 161, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.weekFilter.setFont(font)
+        self.weekFilter.setStyleSheet("color: rgb(255, 255, 255)")
+        self.weekFilter.setIconSize(QtCore.QSize(20, 20))
+        self.weekFilter.setObjectName("weekFilter")
+        self.monthFilter = QtWidgets.QRadioButton(self.timeFilterList)
+        self.monthFilter.setGeometry(QtCore.QRect(20, 130, 191, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.monthFilter.setFont(font)
+        self.monthFilter.setStyleSheet("color: rgb(255, 255, 255)")
+        self.monthFilter.setIconSize(QtCore.QSize(20, 20))
+        self.monthFilter.setObjectName("monthFilter")
+        self.yearFilter = QtWidgets.QRadioButton(self.timeFilterList)
+        self.yearFilter.setGeometry(QtCore.QRect(20, 170, 191, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.yearFilter.setFont(font)
+        self.yearFilter.setStyleSheet("color: rgb(255, 255, 255)")
+        self.yearFilter.setIconSize(QtCore.QSize(20, 20))
+        self.yearFilter.setObjectName("yearFilter")
+        self.filterListBtn_3 = QtWidgets.QWidget(self.filterWidget)
+        self.filterListBtn_3.setGeometry(QtCore.QRect(0, 520, 481, 341))
+        self.filterListBtn_3.setObjectName("filterListBtn_3")
+        self.typeFilter_Label = QtWidgets.QLabel(self.filterListBtn_3)
+        self.typeFilter_Label.setGeometry(QtCore.QRect(20, 10, 441, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.typeFilter_Label.setFont(font)
+        self.typeFilter_Label.setStyleSheet("color: rgb(255, 255, 255)")
+        self.typeFilter_Label.setObjectName("typeFilter_Label")
+        self.vuotdendoBtn = QtWidgets.QCheckBox(self.filterListBtn_3)
+        self.vuotdendoBtn.setGeometry(QtCore.QRect(20, 50, 401, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.vuotdendoBtn.setFont(font)
+        self.vuotdendoBtn.setStyleSheet("color: rgb(255, 255, 255)")
+        self.vuotdendoBtn.setIconSize(QtCore.QSize(20, 20))
+        self.vuotdendoBtn.setObjectName("vuotdendoBtn")
+        self.dosailanduongBtn = QtWidgets.QCheckBox(self.filterListBtn_3)
+        self.dosailanduongBtn.setGeometry(QtCore.QRect(20, 90, 401, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.dosailanduongBtn.setFont(font)
+        self.dosailanduongBtn.setStyleSheet("color: rgb(255, 255, 255)")
+        self.dosailanduongBtn.setIconSize(QtCore.QSize(20, 20))
+        self.dosailanduongBtn.setObjectName("dosailanduongBtn")
+        self.dinguocchieuBtn = QtWidgets.QCheckBox(self.filterListBtn_3)
+        self.dinguocchieuBtn.setGeometry(QtCore.QRect(20, 130, 401, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.dinguocchieuBtn.setFont(font)
+        self.dinguocchieuBtn.setStyleSheet("color: rgb(255, 255, 255)")
+        self.dinguocchieuBtn.setIconSize(QtCore.QSize(20, 20))
+        self.dinguocchieuBtn.setObjectName("dinguocchieuBtn")
+        self.khongxinhanBtn = QtWidgets.QCheckBox(self.filterListBtn_3)
+        self.khongxinhanBtn.setGeometry(QtCore.QRect(20, 170, 401, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.khongxinhanBtn.setFont(font)
+        self.khongxinhanBtn.setStyleSheet("color: rgb(255, 255, 255)")
+        self.khongxinhanBtn.setIconSize(QtCore.QSize(20, 20))
+        self.khongxinhanBtn.setObjectName("khongxinhanBtn")
+        self.doxekhongdungnoiquydinhBtn = QtWidgets.QCheckBox(self.filterListBtn_3)
+        self.doxekhongdungnoiquydinhBtn.setGeometry(QtCore.QRect(20, 210, 401, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.doxekhongdungnoiquydinhBtn.setFont(font)
+        self.doxekhongdungnoiquydinhBtn.setStyleSheet("color: rgb(255, 255, 255)")
+        self.doxekhongdungnoiquydinhBtn.setIconSize(QtCore.QSize(20, 20))
+        self.doxekhongdungnoiquydinhBtn.setObjectName("doxekhongdungnoiquydinhBtn")
+        self.khongdoimubaohiemBtn = QtWidgets.QCheckBox(self.filterListBtn_3)
+        self.khongdoimubaohiemBtn.setGeometry(QtCore.QRect(20, 250, 401, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.khongdoimubaohiemBtn.setFont(font)
+        self.khongdoimubaohiemBtn.setStyleSheet("color: rgb(255, 255, 255)")
+        self.khongdoimubaohiemBtn.setIconSize(QtCore.QSize(20, 20))
+        self.khongdoimubaohiemBtn.setObjectName("khongdoimubaohiemBtn")
+        self.thongkeWidget = QtWidgets.QWidget(self.violationPage)
+        self.thongkeWidget.setGeometry(QtCore.QRect(481, 0, 1441, 1021))
+        self.thongkeWidget.setObjectName("thongkeWidget")
+        self.violationTableWidget = QtWidgets.QTableWidget(self.thongkeWidget)
+        self.violationTableWidget.setGeometry(QtCore.QRect(20, 480, 1401, 521))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.violationTableWidget.sizePolicy().hasHeightForWidth())
+        self.violationTableWidget.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(11)
+        self.violationTableWidget.setFont(font)
+        self.violationTableWidget.setAutoFillBackground(False)
+        self.violationTableWidget.setStyleSheet("color: rgba(0,0,0,240);\n"
+"background-color: rgba(225,225,225,30);")
+        self.violationTableWidget.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.violationTableWidget.setRowCount(1)
+        self.violationTableWidget.setObjectName("violationTableWidget")
+        self.violationTableWidget.setColumnCount(4)
+        item = QtWidgets.QTableWidgetItem()
+        self.violationTableWidget.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.violationTableWidget.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.violationTableWidget.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.violationTableWidget.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignCenter)
+        self.violationTableWidget.setItem(0, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignCenter)
+        self.violationTableWidget.setItem(0, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignCenter)
+        self.violationTableWidget.setItem(0, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignCenter)
+        self.violationTableWidget.setItem(0, 3, item)
+        self.violationTableWidget.horizontalHeader().setStretchLastSection(True)
+        self.chartWidget = QtWidgets.QWidget(self.thongkeWidget)
+        self.chartWidget.setGeometry(QtCore.QRect(20, 10, 1401, 461))
+        self.chartWidget.setStyleSheet("background-color: rgb(85, 255, 255)")
+        self.chartWidget.setObjectName("chartWidget")
+        self.chartLable = QtWidgets.QLabel(self.chartWidget)
+        self.chartLable.setGeometry(QtCore.QRect(510, 140, 331, 81))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.chartLable.setFont(font)
+        self.chartLable.setStyleSheet("border: 2px")
+        self.chartLable.setAlignment(QtCore.Qt.AlignCenter)
+        self.chartLable.setObjectName("chartLable")
+        self.dashboard_Tab.addTab(self.violationPage, "")
+        self.listCam_Page = QtWidgets.QWidget()
+        self.listCam_Page.setObjectName("listCam_Page")
+        self.camList_Widget = QtWidgets.QWidget(self.listCam_Page)
+        self.camList_Widget.setGeometry(QtCore.QRect(0, 0, 501, 1021))
+        self.camList_Widget.setStyleSheet("background-color: rgb(217, 217, 217)")
+        self.camList_Widget.setObjectName("camList_Widget")
+        self.camList_Label = QtWidgets.QLabel(self.camList_Widget)
+        self.camList_Label.setGeometry(QtCore.QRect(0, 0, 501, 41))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.camList_Label.setFont(font)
+        self.camList_Label.setStyleSheet("background-color: rgb(180, 180, 180)")
+        self.camList_Label.setAlignment(QtCore.Qt.AlignCenter)
+        self.camList_Label.setObjectName("camList_Label")
+        self.camDetail_Widget = QtWidgets.QWidget(self.listCam_Page)
+        self.camDetail_Widget.setGeometry(QtCore.QRect(519, 0, 1401, 1021))
+        self.camDetail_Widget.setObjectName("camDetail_Widget")
+        self.dashboard_Tab.addTab(self.listCam_Page, "")
+        App.setCentralWidget(self.dashboard)
 
         self.retranslateUi(App)
-        QtCore.QMetaObject.connectSlotsByName(App)    
+        self.dashboard_Tab.setCurrentIndex(0)
+        QtCore.QMetaObject.connectSlotsByName(App)
+
+################################## Danh sach Cam UI######################################################################
+#         self.setObjectName("App")
+#         #size of app
+#         App.resize(881, 593)
+
+#         #setting style sheet of Mainwindows
+#         App.setStyleSheet("QWidget {\n"
+# "    \n"
+# "    background-color: rgb(245, 245, 245);\n" #background color app
+# "}\n"
+# "  \n"
+# "")
+#Widget on top 
+        self.centralwidget = QtWidgets.QWidget(self.camDetail_Widget)
+        self.centralwidget.setStyleSheet("QWidget {\n"
+ "background-color: rgb(106, 106, 106);\n" #color 
+ "}")
+        self.centralwidget.setGeometry(QtCore.QRect(0,0,881,593))
+        self.centralwidget.setObjectName("centralwidget")
+        self.Face = QtWidgets.QLabel(self.centralwidget)
+        self.Face.setGeometry(QtCore.QRect(480, 480, 341, 141))
+        font = QtGui.QFont()
+        font.setPointSize(72)
+        self.Face.setFont(font)
+        self.Face.setStyleSheet("QLabel {\n"
+ "    background-color: none ;\n"
+ "    border: none; \n"
+ "}")
+        self.Face.setText("")
+        self.Face.setAlignment(QtCore.Qt.AlignCenter)
+        self.Face.setObjectName("Face")
+        self.Tab = QtWidgets.QTabWidget(self.centralwidget)
+        self.Tab.setGeometry(QtCore.QRect(0, 20, 881, 571))
+        self.Tab.setTabletTracking(False)
+        self.Tab.setAcceptDrops(False)
+        self.Tab.setAutoFillBackground(False)
+        self.Tab.setStyleSheet("QTabBar::tab { \n"
+ "height: 20px; \n"
+ "width: 80px;\n"
+ "background-color: rgb(227, 227, 227);\n"
+ "border-top-right-radius : 5px;\n"
+ "border-top-left-radius : 5px;\n"
+ "\n"
+ "}\n"
+ "\n"
+ "QTabWidget::pane {\n"
+ "border: 0px;\n"
+"}\n"
+ "\n"
+ "QTabBar::tab:selected {\n"
+ "background-color: rgb(120, 169, 202);\n" # color top_tab
+ "}\n"
+ "\n"
+ "QTabBar::tab:hover {\n"
+ "background-color: rgb(48, 96, 144);\n"
+ "}")
+        self.Tab.setTabPosition(QtWidgets.QTabWidget.North)
+        self.Tab.setTabShape(QtWidgets.QTabWidget.Rounded)
+        self.Tab.setIconSize(QtCore.QSize(32, 32))
+        self.Tab.setElideMode(QtCore.Qt.ElideLeft)
+        self.Tab.setDocumentMode(True)
+        self.Tab.setTabsClosable(False)
+        self.Tab.setMovable(False)
+        self.Tab.setTabBarAutoHide(False)
+        self.Tab.setObjectName("Tab")
+        self.Setting = QtWidgets.QWidget()
+        self.Setting.setStyleSheet("QWidget {\n"
+"background-color: rgb(120, 169, 202);\n"
+"}")
+        self.Setting.setObjectName("Setting")
+        self.Source = QtWidgets.QGroupBox(self.Setting)
+        self.Source.setGeometry(QtCore.QRect(10, 10, 471, 131))
+        self.Source.setStyleSheet("QGroupBox#Source{\n"
+ "    background-color: #f2f2f2;\n"
+ "    border: none;\n"
+ "    border-radius: 10px;\n"
+ "}\n"
+ "  \n"
+"")
+        self.Source.setTitle("")
+        self.Source.setObjectName("Source")
+        self.Browser = QtWidgets.QPushButton(self.Source)
+        self.Browser.setGeometry(QtCore.QRect(10, 50, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Browser.setFont(font)
+        self.Browser.setStyleSheet("QPushButton#Browser:hover:!pressed\n"
+ "{\n"
+ "      \n"
+ "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+ "}\n"
+ "QPushButton#Browser {\n"
+ "    \n"
+ "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+ "    border: none; \n"
+ "    color: white;\n"
+ "    border-radius: 20px;\n"
+ "}\n"
+ "\n"
+ "QPushButton#Browser:disabled {\n"
+ "     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+ "}")
+        self.Browser.setText("")
+        icon = QtGui.QIcon()
+        #icon Video source
+        icon.addPixmap(QtGui.QPixmap("static/icon/folder-open-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Browser.setIcon(icon)
+        self.Browser.setIconSize(QtCore.QSize(24, 24))
+        self.Browser.setObjectName("Browser")
+        self.Filename = QtWidgets.QLabel(self.Source)
+        self.Filename.setGeometry(QtCore.QRect(10, 50, 441, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename.setFont(font)
+        self.Filename.setStyleSheet("QLabel#Filename {\n"
+ "      background-color: #bfbfbf;\n"
+ "      border: none; \n"
+ "    color: white;\n"
+"    border-radius: 20px;\n"
+ "}")
+        self.Filename.setScaledContents(False)
+        self.Filename.setWordWrap(False)
+        self.Filename.setIndent(50)
+        self.Filename.setObjectName("Filename")
+        self.Title = QtWidgets.QLabel(self.Source)
+        self.Title.setGeometry(QtCore.QRect(-20, 0, 131, 31))
+        self.Title.setStyleSheet("QLabel#Title {\n"
+"    background-color: rgb(90, 90, 90);\n"
+"    border: none; \n"
+"    border-bottom-right-radius : 15px;\n"
+"}")
+        self.Title.setText("")
+        self.Title.setObjectName("Title")
+        self.Name = QtWidgets.QLabel(self.Source)
+        self.Name.setGeometry(QtCore.QRect(10, 5, 91, 20))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Name.setFont(font)
+        self.Name.setStyleSheet("QLabel#Name {\n"
+"    background-color: none;\n"
+"    color: white;\n"
+"    border: none; \n"
+"    border-radius: 8px;\n"
+"}\n"
+"")
+        self.Name.setObjectName("Name")
+        self.Filename.raise_()
+        self.Browser.raise_()
+        self.Title.raise_()
+        self.Name.raise_()
+        self.Save = QtWidgets.QGroupBox(self.Setting)
+        self.Save.setGeometry(QtCore.QRect(10, 150, 471, 161))
+        self.Save.setStyleSheet("QGroupBox#Save{\n"
+"    background-color: #f2f2f2;\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"  \n"
+"")
+        self.Save.setTitle("")
+        self.Save.setObjectName("Save")
+        self.Filename_2 = QtWidgets.QLabel(self.Save)
+        self.Filename_2.setGeometry(QtCore.QRect(10, 50, 441, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_2.setFont(font)
+        self.Filename_2.setStyleSheet("QLabel#Filename_2 {\n"
+"      background-color: #bfbfbf;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_2.setScaledContents(False)
+        self.Filename_2.setWordWrap(False)
+        self.Filename_2.setIndent(50)
+        self.Filename_2.setObjectName("Filename_2")
+        self.Browser_2 = QtWidgets.QPushButton(self.Save)
+        self.Browser_2.setGeometry(QtCore.QRect(10, 50, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Browser_2.setFont(font)
+        self.Browser_2.setStyleSheet("QPushButton#Browser_2:hover:!pressed\n"
+"{\n"
+"      \n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton#Browser_2 {\n"
+"    \n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"QPushButton#Browser_2:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}")
+        self.Browser_2.setText("")
+        self.Browser_2.setIcon(icon)
+        self.Browser_2.setIconSize(QtCore.QSize(24, 24))
+        self.Browser_2.setObjectName("Browser_2")
+        self.Title_2 = QtWidgets.QLabel(self.Save)
+        self.Title_2.setGeometry(QtCore.QRect(0, 0, 111, 31))
+        self.Title_2.setStyleSheet("QLabel#Title_2 {\n"
+"    background-color: rgb(90, 90, 90);\n"
+"    border: none; \n"
+"    border-bottom-right-radius : 15px;\n"
+"}")
+        self.Title_2.setText("")
+        self.Title_2.setObjectName("Title_2")
+        self.Name_2 = QtWidgets.QLabel(self.Save)
+        self.Name_2.setGeometry(QtCore.QRect(10, 5, 91, 20))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Name_2.setFont(font)
+        self.Name_2.setStyleSheet("QLabel#Name_2 {\n"
+"    background-color: none;\n"
+"    color: white;\n"
+"    border: none; \n"
+"    border-radius: 8px;\n"
+"}\n"
+"")
+        self.Name_2.setObjectName("Name_2")
+        self.Result_dir = QtWidgets.QLabel(self.Save)
+        self.Result_dir.setGeometry(QtCore.QRect(20, 110, 311, 41))
+        self.Result_dir.setStyleSheet("QLabel#Result_dir {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Result_dir.setText("")
+        self.Result_dir.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Result_dir.setObjectName("Result_dir")
+        self.Copy_Right = QtWidgets.QLabel(self.Setting)
+        self.Copy_Right.setGeometry(QtCore.QRect(10, 520, 211, 21))
+        font = QtGui.QFont()
+        font.setFamily("Comfortaa")
+        self.Copy_Right.setFont(font)
+        self.Copy_Right.setStyleSheet("QLabel {\n"
+"    \n"
+"    background-color: rgb(120, 169, 202);\n"
+"}")
+        self.Copy_Right.setObjectName("Copy_Right")
+        self.Total = QtWidgets.QGroupBox(self.Setting)
+        self.Total.setGeometry(QtCore.QRect(500, 10, 371, 341))
+        self.Total.setStyleSheet("QGroupBox#Total{\n"
+"    background-color: #f2f2f2;\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"  \n"
+"")
+        self.Total.setTitle("")
+        self.Total.setObjectName("Total")
+        self.TLable0 = QtWidgets.QLabel(self.Total)
+        self.TLable0.setGeometry(QtCore.QRect(30, 50, 151, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLable0.setFont(font)
+        self.TLable0.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLable0.setTextFormat(QtCore.Qt.RichText)
+        self.TLable0.setScaledContents(False)
+        self.TLable0.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLable0.setWordWrap(True)
+        self.TLable0.setIndent(0)
+        self.TLable0.setObjectName("TLable0")
+        self.TLable1 = QtWidgets.QLabel(self.Total)
+        self.TLable1.setGeometry(QtCore.QRect(30, 100, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLable1.setFont(font)
+        self.TLable1.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLable1.setTextFormat(QtCore.Qt.RichText)
+        self.TLable1.setScaledContents(False)
+        self.TLable1.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLable1.setWordWrap(True)
+        self.TLable1.setIndent(0)
+        self.TLable1.setObjectName("TLable1")
+        self.TLabel2 = QtWidgets.QLabel(self.Total)
+        self.TLabel2.setGeometry(QtCore.QRect(30, 150, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2.setFont(font)
+        self.TLabel2.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2.setScaledContents(False)
+        self.TLabel2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2.setWordWrap(True)
+        self.TLabel2.setIndent(0)
+        self.TLabel2.setObjectName("TLabel2")
+        self.Tcounter_0 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_0.setGeometry(QtCore.QRect(290, 50, 31, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_0.setFont(font)
+        self.Tcounter_0.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_0.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_0.setScaledContents(False)
+        self.Tcounter_0.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_0.setWordWrap(True)
+        self.Tcounter_0.setIndent(0)
+        self.Tcounter_0.setObjectName("Tcounter_0")
+        self.Tcounter_1 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_1.setGeometry(QtCore.QRect(290, 100, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_1.setFont(font)
+        self.Tcounter_1.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_1.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_1.setScaledContents(False)
+        self.Tcounter_1.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_1.setWordWrap(True)
+        self.Tcounter_1.setIndent(0)
+        self.Tcounter_1.setObjectName("Tcounter_1")
+        self.Tcounter_2 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_2.setGeometry(QtCore.QRect(290, 150, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_2.setFont(font)
+        self.Tcounter_2.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_2.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_2.setScaledContents(False)
+        self.Tcounter_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_2.setWordWrap(True)
+        self.Tcounter_2.setIndent(0)
+        self.Tcounter_2.setObjectName("Tcounter_2")
+        self.Filename_3 = QtWidgets.QLabel(self.Total)
+        self.Filename_3.setGeometry(QtCore.QRect(10, 40, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_3.setFont(font)
+        self.Filename_3.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_3.setScaledContents(False)
+        self.Filename_3.setWordWrap(False)
+        self.Filename_3.setIndent(50)
+        self.Filename_3.setObjectName("Filename_3")
+        self.Filename_4 = QtWidgets.QLabel(self.Total)
+        self.Filename_4.setGeometry(QtCore.QRect(10, 90, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_4.setFont(font)
+        self.Filename_4.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_4.setScaledContents(False)
+        self.Filename_4.setWordWrap(False)
+        self.Filename_4.setIndent(50)
+        self.Filename_4.setObjectName("Filename_4")
+        self.Filename_5 = QtWidgets.QLabel(self.Total)
+        self.Filename_5.setGeometry(QtCore.QRect(10, 140, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_5.setFont(font)
+        self.Filename_5.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_5.setScaledContents(False)
+        self.Filename_5.setWordWrap(False)
+        self.Filename_5.setIndent(50)
+        self.Filename_5.setObjectName("Filename_5")
+        self.Filename_6 = QtWidgets.QLabel(self.Total)
+        self.Filename_6.setGeometry(QtCore.QRect(10, 190, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_6.setFont(font)
+        self.Filename_6.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_6.setScaledContents(False)
+        self.Filename_6.setWordWrap(False)
+        self.Filename_6.setIndent(50)
+        self.Filename_6.setObjectName("Filename_6")
+        self.Filename_7 = QtWidgets.QLabel(self.Total)
+        self.Filename_7.setGeometry(QtCore.QRect(10, 240, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_7.setFont(font)
+        self.Filename_7.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_7.setScaledContents(False)
+        self.Filename_7.setWordWrap(False)
+        self.Filename_7.setIndent(50)
+        self.Filename_7.setObjectName("Filename_7")
+        self.Filename_8 = QtWidgets.QLabel(self.Total)
+        self.Filename_8.setGeometry(QtCore.QRect(10, 290, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_8.setFont(font)
+        self.Filename_8.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_8.setScaledContents(False)
+        self.Filename_8.setWordWrap(False)
+        self.Filename_8.setIndent(50)
+        self.Filename_8.setObjectName("Filename_8")
+        self.Title_4 = QtWidgets.QLabel(self.Total)
+        self.Title_4.setGeometry(QtCore.QRect(0, 0, 161, 31))
+        self.Title_4.setStyleSheet("QLabel {\n"
+"    background-color: rgb(90, 90, 90);\n"
+"    border: none; \n"
+"    border-bottom-right-radius : 15px;\n"
+"}")
+        self.Title_4.setText("")
+        self.Title_4.setObjectName("Title_4")
+        self.Name_4 = QtWidgets.QLabel(self.Total)
+        self.Name_4.setGeometry(QtCore.QRect(10, 5, 141, 20))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Name_4.setFont(font)
+        self.Name_4.setStyleSheet("QLabel {\n"
+"    background-color: none;\n"
+"    color: white;\n"
+"    border: none; \n"
+"    border-radius: 8px;\n"
+"}\n"
+"")
+        self.Name_4.setObjectName("Name_4")
+        self.TLabel2_2 = QtWidgets.QLabel(self.Total)
+        self.TLabel2_2.setGeometry(QtCore.QRect(30, 200, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_2.setFont(font)
+        self.TLabel2_2.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_2.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_2.setScaledContents(False)
+        self.TLabel2_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_2.setWordWrap(True)
+        self.TLabel2_2.setIndent(0)
+        self.TLabel2_2.setObjectName("TLabel2_2")
+        self.TLabel2_3 = QtWidgets.QLabel(self.Total)
+        self.TLabel2_3.setGeometry(QtCore.QRect(30, 250, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_3.setFont(font)
+        self.TLabel2_3.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_3.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_3.setScaledContents(False)
+        self.TLabel2_3.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_3.setWordWrap(True)
+        self.TLabel2_3.setIndent(0)
+        self.TLabel2_3.setObjectName("TLabel2_3")
+        self.TLabel2_4 = QtWidgets.QLabel(self.Total)
+        self.TLabel2_4.setGeometry(QtCore.QRect(30, 300, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_4.setFont(font)
+        self.TLabel2_4.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_4.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_4.setScaledContents(False)
+        self.TLabel2_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_4.setWordWrap(True)
+        self.TLabel2_4.setIndent(0)
+        self.TLabel2_4.setObjectName("TLabel2_4")
+        self.Tcounter_3 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_3.setGeometry(QtCore.QRect(290, 200, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_3.setFont(font)
+        self.Tcounter_3.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_3.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_3.setScaledContents(False)
+        self.Tcounter_3.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_3.setWordWrap(True)
+        self.Tcounter_3.setIndent(0)
+        self.Tcounter_3.setObjectName("Tcounter_3")
+        self.Tcounter_4 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_4.setGeometry(QtCore.QRect(290, 250, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_4.setFont(font)
+        self.Tcounter_4.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_4.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_4.setScaledContents(False)
+        self.Tcounter_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_4.setWordWrap(True)
+        self.Tcounter_4.setIndent(0)
+        self.Tcounter_4.setObjectName("Tcounter_4")
+        self.Tcounter_5 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_5.setGeometry(QtCore.QRect(290, 300, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_5.setFont(font)
+        self.Tcounter_5.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_5.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_5.setScaledContents(False)
+        self.Tcounter_5.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_5.setWordWrap(True)
+        self.Tcounter_5.setIndent(0)
+        self.Tcounter_5.setObjectName("Tcounter_5")
+        self.Filename_3.raise_()
+        self.TLable0.raise_()
+        self.Tcounter_0.raise_()
+        self.Filename_4.raise_()
+        self.TLable1.raise_()
+        self.Tcounter_1.raise_()
+        self.Filename_5.raise_()
+        self.TLabel2.raise_()
+        self.Tcounter_2.raise_()
+        self.Filename_6.raise_()
+        self.Filename_7.raise_()
+        self.Filename_8.raise_()
+        self.Title_4.raise_()
+        self.Name_4.raise_()
+        self.TLabel2_2.raise_()
+        self.TLabel2_3.raise_()
+        self.TLabel2_4.raise_()
+        self.Tcounter_3.raise_()
+        self.Tcounter_4.raise_()
+        self.Tcounter_5.raise_()
+        self.Violation = QtWidgets.QGroupBox(self.Setting)
+        self.Violation.setGeometry(QtCore.QRect(500, 360, 371, 141))
+        self.Violation.setStyleSheet("QGroupBox#Violation{\n"
+"    background-color: #f2f2f2;\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"  \n"
+"")
+        self.Violation.setTitle("")
+        self.Violation.setObjectName("Violation")
+        self.Vcounter = QtWidgets.QLabel(self.Violation)
+        self.Vcounter.setGeometry(QtCore.QRect(290, 50, 41, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Vcounter.setFont(font)
+        self.Vcounter.setStyleSheet("QLabel#Vcounter {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Vcounter.setTextFormat(QtCore.Qt.RichText)
+        self.Vcounter.setScaledContents(False)
+        self.Vcounter.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Vcounter.setWordWrap(False)
+        self.Vcounter.setIndent(0)
+        self.Vcounter.setObjectName("Vcounter")
+        self.Filename_9 = QtWidgets.QLabel(self.Violation)
+        self.Filename_9.setGeometry(QtCore.QRect(10, 40, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_9.setFont(font)
+        self.Filename_9.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_9.setScaledContents(False)
+        self.Filename_9.setWordWrap(False)
+        self.Filename_9.setIndent(50)
+        self.Filename_9.setObjectName("Filename_9")
+        self.Filename_10 = QtWidgets.QLabel(self.Violation)
+        self.Filename_10.setGeometry(QtCore.QRect(10, 90, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_10.setFont(font)
+        self.Filename_10.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_10.setScaledContents(False)
+        self.Filename_10.setWordWrap(False)
+        self.Filename_10.setIndent(50)
+        self.Filename_10.setObjectName("Filename_10")
+        self.Vcounter_2 = QtWidgets.QLabel(self.Violation)
+        self.Vcounter_2.setGeometry(QtCore.QRect(290, 100, 41, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Vcounter_2.setFont(font)
+        self.Vcounter_2.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Vcounter_2.setTextFormat(QtCore.Qt.RichText)
+        self.Vcounter_2.setScaledContents(False)
+        self.Vcounter_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Vcounter_2.setWordWrap(False)
+        self.Vcounter_2.setIndent(0)
+        self.Vcounter_2.setObjectName("Vcounter_2")
+        self.Name_5 = QtWidgets.QLabel(self.Violation)
+        self.Name_5.setGeometry(QtCore.QRect(10, 5, 121, 20))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Name_5.setFont(font)
+        self.Name_5.setStyleSheet("QLabel {\n"
+"    background-color: none;\n"
+"    color: white;\n"
+"    border: none; \n"
+"    border-radius: 8px;\n"
+"}\n"
+"")
+        self.Name_5.setObjectName("Name_5")
+        self.Title_5 = QtWidgets.QLabel(self.Violation)
+        self.Title_5.setGeometry(QtCore.QRect(0, 0, 141, 31))
+        self.Title_5.setStyleSheet("QLabel {\n"
+"    background-color: rgb(90, 90, 90);\n"
+"    border: none; \n"
+"    border-bottom-right-radius : 15px;\n"
+"}")
+        self.Title_5.setText("")
+        self.Title_5.setObjectName("Title_5")
+        self.TLabel2_5 = QtWidgets.QLabel(self.Violation)
+        self.TLabel2_5.setGeometry(QtCore.QRect(30, 50, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_5.setFont(font)
+        self.TLabel2_5.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_5.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_5.setScaledContents(False)
+        self.TLabel2_5.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_5.setWordWrap(True)
+        self.TLabel2_5.setIndent(0)
+        self.TLabel2_5.setObjectName("TLabel2_5")
+        self.TLabel2_6 = QtWidgets.QLabel(self.Violation)
+        self.TLabel2_6.setGeometry(QtCore.QRect(30, 100, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_6.setFont(font)
+        self.TLabel2_6.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_6.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_6.setScaledContents(False)
+        self.TLabel2_6.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_6.setWordWrap(True)
+        self.TLabel2_6.setIndent(0)
+        self.TLabel2_6.setObjectName("TLabel2_6")
+        self.Filename_9.raise_()
+        self.Vcounter.raise_()
+        self.Filename_10.raise_()
+        self.Vcounter_2.raise_()
+        self.Title_5.raise_()
+        self.Name_5.raise_()
+        self.TLabel2_5.raise_()
+        self.TLabel2_6.raise_()
+        self.Display = QtWidgets.QGroupBox(self.Setting)
+        self.Display.setGeometry(QtCore.QRect(10, 320, 471, 101))
+        self.Display.setStyleSheet("QGroupBox#Display{\n"
+"    background-color: #f2f2f2;\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"  \n"
+"")
+        self.Display.setTitle("")
+        self.Display.setObjectName("Display")
+        self.Title_3 = QtWidgets.QLabel(self.Display)
+        self.Title_3.setGeometry(QtCore.QRect(0, 0, 121, 31))
+        self.Title_3.setStyleSheet("QLabel#Title_3 {\n"
+"    background-color: rgb(90, 90, 90);\n"
+"    border: none; \n"
+"    border-bottom-right-radius : 15px;\n"
+"}")
+        self.Title_3.setText("")
+        self.Title_3.setObjectName("Title_3")
+        self.Name_3 = QtWidgets.QLabel(self.Display)
+        self.Name_3.setGeometry(QtCore.QRect(10, 5, 101, 20))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Name_3.setFont(font)
+        self.Name_3.setStyleSheet("QLabel#Name_3 {\n"
+"    background-color: none;\n"
+"    color: white;\n"
+"    border: none; \n"
+"    border-radius: 8px;\n"
+"}\n"
+"")     #check box show the detected label
+        self.Name_3.setObjectName("Name_3")
+        self.ShowLabel = QtWidgets.QCheckBox(self.Display)
+        self.ShowLabel.setGeometry(QtCore.QRect(10, 40, 201, 21))
+        self.ShowLabel.setStyleSheet("QCheckBox {\n"
+"background-color: None;\n"
+"}")
+        #check box showing the dectected box
+        self.ShowLabel.setChecked(True)
+        self.ShowLabel.setObjectName("ShowLabel")
+        self.ShowBox = QtWidgets.QCheckBox(self.Display)
+        self.ShowBox.setGeometry(QtCore.QRect(240, 40, 201, 21))
+        self.ShowBox.setStyleSheet("QCheckBox {\n"
+"background-color: None;\n"
+"}")
+        #check box save image of the vehicle
+        self.ShowBox.setObjectName("ShowBox")
+        self.SaveImage = QtWidgets.QCheckBox(self.Display)
+        self.SaveImage.setGeometry(QtCore.QRect(10, 60, 211, 21))
+        self.SaveImage.setStyleSheet("QCheckBox {\n"
+"background-color: None;\n"
+"}")
+        # check box save video of the vehicle
+        self.SaveImage.setChecked(True)
+        self.SaveImage.setObjectName("SaveImage")
+        self.SaveVideo = QtWidgets.QCheckBox(self.Display)
+        self.SaveVideo.setGeometry(QtCore.QRect(240, 60, 211, 21))
+        self.SaveVideo.setStyleSheet("QCheckBox {\n"
+"background-color: None;\n"
+"}")
+        self.SaveVideo.setChecked(True)
+        self.SaveVideo.setObjectName("SaveVideo")
+        self.line = QtWidgets.QFrame(self.Setting)
+        self.line.setGeometry(QtCore.QRect(482, 10, 16, 491))
+        self.line.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.line.setMidLineWidth(0)
+        self.line.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line.setObjectName("line")
+        self.tabWidget = QtWidgets.QTabWidget(self.Setting)
+        self.tabWidget.setGeometry(QtCore.QRect(10, 430, 471, 71))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.tabWidget.setFont(font)
+        self.tabWidget.setStyleSheet("QTabBar::tab { \n"
+"height: 20px; \n"
+"width: 80px;\n"
+"background-color:  rgb(90, 90, 90);\n"
+"border-top-right-radius : 5px;\n"
+"border-top-left-radius : 5px;\n"
+"color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"QTabWidget::pane {\n"
+"border: 0px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"background-color: #f2f2f2;\n"
+"color: #000;\n"
+"}\n"
+"\n"
+"QTabBar::tab:hover {\n"
+"background-color: #f2f2f2;\n"
+"}")
+        self.tabWidget.setObjectName("tabWidget")
+        self.left_lane = QtWidgets.QWidget()
+        self.left_lane.setStyleSheet("QWidget {\n"
+"background-color: #f2f2f2;\n"
+"}")
+        self.left_lane.setObjectName("left_lane")
+        self.turn_left_left_lane = QtWidgets.QCheckBox(self.left_lane)
+        self.turn_left_left_lane.setGeometry(QtCore.QRect(20, 20, 91, 17))
+        self.turn_left_left_lane.setObjectName("turn_left_left_lane")
+        self.go_forward_left_lane = QtWidgets.QCheckBox(self.left_lane)
+        self.go_forward_left_lane.setGeometry(QtCore.QRect(140, 20, 91, 17))
+        self.go_forward_left_lane.setObjectName("go_forward_left_lane")
+        self.turn_right_left_lane = QtWidgets.QCheckBox(self.left_lane)
+        self.turn_right_left_lane.setGeometry(QtCore.QRect(260, 20, 91, 17))
+        self.turn_right_left_lane.setObjectName("turn_right_left_lane")
+        self.red_light_left = QtWidgets.QCheckBox(self.left_lane)
+        self.red_light_left.setGeometry(QtCore.QRect(380, 20, 71, 17))
+        self.red_light_left.setObjectName("red_light_left")
+        self.tabWidget.addTab(self.left_lane, "")
+        self.center_lane = QtWidgets.QWidget()
+        self.center_lane.setStyleSheet("QWidget {\n"
+"background-color: #f2f2f2;\n"
+"}")
+        self.center_lane.setObjectName("center_lane")
+        self.turn_right_center_lane = QtWidgets.QCheckBox(self.center_lane)
+        self.turn_right_center_lane.setGeometry(QtCore.QRect(260, 20, 91, 17))
+        self.turn_right_center_lane.setObjectName("turn_right_center_lane")
+        self.go_forwar_center_lane = QtWidgets.QCheckBox(self.center_lane)
+        self.go_forwar_center_lane.setGeometry(QtCore.QRect(140, 20, 91, 17))
+        self.go_forwar_center_lane.setObjectName("go_forwar_center_lane")
+        self.turn_left_center_lane = QtWidgets.QCheckBox(self.center_lane)
+        self.turn_left_center_lane.setGeometry(QtCore.QRect(20, 20, 91, 17))
+        self.turn_left_center_lane.setObjectName("turn_left_center_lane")
+        self.red_light_center = QtWidgets.QCheckBox(self.center_lane)
+        self.red_light_center.setGeometry(QtCore.QRect(380, 20, 71, 17))
+        self.red_light_center.setObjectName("red_light_center")
+        self.tabWidget.addTab(self.center_lane, "")
+        self.right_lane = QtWidgets.QWidget()
+        self.right_lane.setStyleSheet("QWidget {\n"
+"background-color: #f2f2f2;\n"
+"}")
+        self.right_lane.setObjectName("right_lane")
+        self.turn_right_right_lane = QtWidgets.QCheckBox(self.right_lane)
+        self.turn_right_right_lane.setGeometry(QtCore.QRect(260, 20, 91, 17))
+        self.turn_right_right_lane.setObjectName("turn_right_right_lane")
+        self.go_forward_right_lane = QtWidgets.QCheckBox(self.right_lane)
+        self.go_forward_right_lane.setGeometry(QtCore.QRect(140, 20, 91, 17))
+        self.go_forward_right_lane.setObjectName("go_forward_right_lane")
+        self.turn_left_right_lane = QtWidgets.QCheckBox(self.right_lane)
+        self.turn_left_right_lane.setGeometry(QtCore.QRect(20, 20, 91, 17))
+        self.turn_left_right_lane.setObjectName("turn_left_right_lane")
+        self.red_light_right = QtWidgets.QCheckBox(self.right_lane)
+        self.red_light_right.setGeometry(QtCore.QRect(380, 20, 71, 17))
+        self.red_light_right.setObjectName("red_light_right")
+        self.tabWidget.addTab(self.right_lane, "")
+        self.Tab.addTab(self.Setting, "") # tab main browser folder
+        self.Draw = QtWidgets.QWidget()
+        self.Draw.setStyleSheet("QWidget {\n"
+"background-color: rgb(120, 169, 202);\n"
+"}")
+        self.Draw.setObjectName("Draw")
+
+        self.Save_draw = QtWidgets.QPushButton(self.Draw)
+        self.Save_draw.setGeometry(QtCore.QRect(750, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Save_draw.setFont(font)
+        self.Save_draw.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Save_draw.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Save_draw.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("static/icon/save-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Save_draw.setIcon(icon1)
+        self.Save_draw.setIconSize(QtCore.QSize(24, 24))
+        self.Save_draw.setAutoRepeat(False)
+        self.Save_draw.setAutoExclusive(False)
+        self.Save_draw.setFlat(False)
+        self.Save_draw.setObjectName("Save_draw")
+
+#draw left line 1:->
+        self.Line_left = QtWidgets.QPushButton(self.Draw)
+        self.Line_left.setGeometry(QtCore.QRect(10, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_left.setFont(font)
+        self.Line_left.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_left.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_left.setText("")
+#icon draw line left 1: start
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("static/icon/left-land-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_left.setIcon(icon1)
+        self.Line_left.setIconSize(QtCore.QSize(24, 24))
+        self.Line_left.setAutoRepeat(False)
+        self.Line_left.setAutoExclusive(False)
+        self.Line_left.setFlat(False)
+        self.Line_left.setObjectName("Line_left")
+##left line 1 <--
+
+
+
+        self.Square = QtWidgets.QPushButton(self.Draw)
+        self.Square.setGeometry(QtCore.QRect(350, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Square.setFont(font)
+        self.Square.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Square.setStyleSheet("QPushButton#Square:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton#Square:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton#Square {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Square.setText("")
+#icon choose traffic_light
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("static/icon/crect-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Square.setIcon(icon2)
+        self.Square.setIconSize(QtCore.QSize(24, 24))
+        self.Square.setAutoRepeat(False)
+        self.Square.setAutoExclusive(False)
+        self.Square.setFlat(False)
+        self.Square.setObjectName("Square")
+        self.Draw_line = QtWidgets.QWidget(self.Draw)
+        self.Draw_line.setGeometry(QtCore.QRect(10, 10, 854, 480))
+        self.Draw_line.setStyleSheet("QWidget {\n"
+"        background-color: rgb(62, 62, 62);\n"
+"}")
+        self.Draw_line.setObjectName("Draw_line")
+
+# go back previous activity
+        self.Delete = QtWidgets.QPushButton(self.Draw)
+        self.Delete.setGeometry(QtCore.QRect(820, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Delete.setFont(font)
+        self.Delete.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Delete.setStyleSheet("QPushButton#Delete:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton#Delete:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton#Delete {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Delete.setText("")
+#icon back draw previous
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("static/icon/back-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Delete.setIcon(icon3)
+        self.Delete.setIconSize(QtCore.QSize(24, 24))
+        self.Delete.setAutoRepeat(False)
+        self.Delete.setAutoExclusive(False)
+        self.Delete.setFlat(False)
+        self.Delete.setObjectName("Delete")
+
+
+#draw line center 1 : -->
+        self.Line_Center = QtWidgets.QPushButton(self.Draw)
+        self.Line_Center.setGeometry(QtCore.QRect(60, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_Center.setFont(font)
+        self.Line_Center.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_Center.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_Center.setText("")
+#icon draw line Center 1: start
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("static/icon/center-land-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_Center.setIcon(icon4)
+        self.Line_Center.setIconSize(QtCore.QSize(24, 24))
+        self.Line_Center.setAutoRepeat(False)
+        self.Line_Center.setAutoExclusive(False)
+        self.Line_Center.setFlat(False)
+        self.Line_Center.setObjectName("Line_Center")
+#draw line center 1 <--
+
+#right line 1-->
+        self.Line_Right = QtWidgets.QPushButton(self.Draw)
+        self.Line_Right.setGeometry(QtCore.QRect(110, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_Right.setFont(font)
+        self.Line_Right.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_Right.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_Right.setText("")
+#icon draw line right 1: start
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("static/icon/right-land-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_Right.setIcon(icon5)
+        self.Line_Right.setIconSize(QtCore.QSize(24, 24))
+        self.Line_Right.setAutoRepeat(False)
+        self.Line_Right.setAutoExclusive(False)
+        self.Line_Right.setFlat(False)
+        self.Line_Right.setObjectName("Line_Right")
+
+
+#line center 2: end -->
+        self.Line_Center_2 = QtWidgets.QPushButton(self.Draw)
+        self.Line_Center_2.setGeometry(QtCore.QRect(230, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_Center_2.setFont(font)
+        self.Line_Center_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_Center_2.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_Center_2.setText("")
+#icon draw line center 2 : end 
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("static/icon/keep-forward-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_Center_2.setIcon(icon6)
+        self.Line_Center_2.setIconSize(QtCore.QSize(24, 24))
+        self.Line_Center_2.setAutoRepeat(False)
+        self.Line_Center_2.setAutoExclusive(False)
+        self.Line_Center_2.setFlat(False)
+        self.Line_Center_2.setObjectName("Line_Center_2")
+
+# line left 2:end -->
+        self.Line_left_2 = QtWidgets.QPushButton(self.Draw)
+        self.Line_left_2.setGeometry(QtCore.QRect(180, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_left_2.setFont(font)
+        self.Line_left_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_left_2.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_left_2.setText("")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("static/icon/turn-left-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_left_2.setIcon(icon7)
+        self.Line_left_2.setIconSize(QtCore.QSize(24, 24))
+        self.Line_left_2.setAutoRepeat(False)
+        self.Line_left_2.setAutoExclusive(False)
+        self.Line_left_2.setFlat(False)
+        self.Line_left_2.setObjectName("Line_left_2")
+
+
+#line right 2 : end -->
+        self.Line_Right_2 = QtWidgets.QPushButton(self.Draw)
+        self.Line_Right_2.setGeometry(QtCore.QRect(280, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_Right_2.setFont(font)
+        self.Line_Right_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_Right_2.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_Right_2.setText("")
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap("static/icon/turn-right-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_Right_2.setIcon(icon8)
+        self.Line_Right_2.setIconSize(QtCore.QSize(24, 24))
+        self.Line_Right_2.setAutoRepeat(False)
+        self.Line_Right_2.setAutoExclusive(False)
+        self.Line_Right_2.setFlat(False)
+        self.Line_Right_2.setObjectName("Line_Right_2")
+## line right 2 :<--
+
+
+
+        self.Square.raise_()
+        self.Draw_line.raise_()
+        self.Delete.raise_()
+        self.Line_Center.raise_()
+        self.Line_Right.raise_()
+        self.Line_left.raise_()
+        self.Line_Center_2.raise_()
+        self.Line_left_2.raise_()
+        self.Line_Right_2.raise_()
+        self.Save_draw.raise_()
+
+        self.Tab.addTab(self.Draw, "") # add Draw tab;
+        self.Monitor = QtWidgets.QWidget()
+        self.Monitor.setStyleSheet("QWidget {\n"
+"background-color: rgb(120, 169, 202);\n"
+"}")
+        self.Monitor.setObjectName("Monitor")
+        self.Play = QtWidgets.QPushButton(self.Monitor)
+        self.Play.setGeometry(QtCore.QRect(10, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Play.setFont(font)
+        self.Play.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Play.setStyleSheet("QPushButton#Play:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton#Play:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton#Play {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Play.setText("")
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap("static/icon/play-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Play.setIcon(icon9)
+        self.Play.setIconSize(QtCore.QSize(16, 16))
+        self.Play.setAutoRepeat(False)
+        self.Play.setAutoExclusive(False)
+        self.Play.setFlat(False)
+        self.Play.setObjectName("Play")
+        self.Stop = QtWidgets.QPushButton(self.Monitor)
+        self.Stop.setGeometry(QtCore.QRect(70, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Stop.setFont(font)
+        self.Stop.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Stop.setStyleSheet("QPushButton#Stop:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton#Stop:hover:!pressed {\n"
+"    \n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(36, 11, 11, 255), stop:1 rgba(255, 50, 119, 255));\n"
+"}\n"
+"QPushButton#Stop {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(147, 46, 46, 255), stop:1 rgba(255, 50, 119, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Stop.setText("")
+        icon10 = QtGui.QIcon()
+        icon10.addPixmap(QtGui.QPixmap("static/icon/stop-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Stop.setIcon(icon10)
+        self.Stop.setIconSize(QtCore.QSize(16, 16))
+        self.Stop.setAutoRepeat(False)
+        self.Stop.setAutoExclusive(False)
+        self.Stop.setFlat(False)
+        self.Stop.setObjectName("Stop")
+        self.Camera_view = QtWidgets.QWidget(self.Monitor)
+        self.Camera_view.setGeometry(QtCore.QRect(10, 10, 854, 480))
+        self.Camera_view.setStyleSheet("QWidget {\n"
+"    background-color: rgb(62, 62, 62);\n"
+"}")
+        self.Camera_view.setObjectName("Camera_view")
+        self.Violation_name = QtWidgets.QLabel(self.Monitor)
+        self.Violation_name.setGeometry(QtCore.QRect(600, 500, 261, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Violation_name.setFont(font)
+        self.Violation_name.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: black;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Violation_name.setScaledContents(False)
+        self.Violation_name.setWordWrap(False)
+        self.Violation_name.setIndent(20)
+        self.Violation_name.setObjectName("Violation_name")
+
+#        self.Tab.addTab(self.Monitor, "") # add tab Home
+        self.Export = QtWidgets.QWidget()
+        self.Export.setStyleSheet("QWidget {\n"
+"background-color: rgb(120, 169, 202);\n"
+"}")
+        self.Export.setObjectName("Export")
+        self.Save_video = QtWidgets.QPushButton(self.Export)
+        self.Save_video.setGeometry(QtCore.QRect(10, 500, 81, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Save_video.setFont(font)
+        self.Save_video.setStyleSheet("QPushButton#Save_video:hover:!pressed\n"
+"{\n"
+"      \n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton#Save_video {\n"
+"    \n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"QPushButton#Save_video:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}")
+        self.Save_video.setText("")
+        icon11 = QtGui.QIcon()
+        icon11.addPixmap(QtGui.QPixmap("static/icon/save-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Save_video.setIcon(icon11)
+        self.Save_video.setIconSize(QtCore.QSize(24, 24))
+        self.Save_video.setObjectName("Save_video")
+        self.Table = QtWidgets.QTableWidget(self.Export)
+        self.Table.setGeometry(QtCore.QRect(10, 10, 291, 481))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.Table.sizePolicy().hasHeightForWidth())
+        self.Table.setSizePolicy(sizePolicy)
+        self.Table.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.Table.setStyleSheet("QTableWidget {\n"
+"    background-color: #f2f2f2;\n"
+"    border: 2px solid gray;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    color: black;\n"
+"    padding-top: 6px;\n"
+"}\n"
+"\n"
+"QHeaderView {\n"
+"    qproperty-defaultAlignment: AlignHCenter;\n"
+"}\n"
+"")
+        self.Table.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.Table.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.Table.setLineWidth(1)
+        self.Table.setMidLineWidth(1)
+        self.Table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.Table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContentsOnFirstShow)
+        self.Table.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed|QtWidgets.QAbstractItemView.DoubleClicked|QtWidgets.QAbstractItemView.SelectedClicked)
+        self.Table.setDefaultDropAction(QtCore.Qt.IgnoreAction)
+        self.Table.setAlternatingRowColors(True)
+        self.Table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.Table.setTextElideMode(QtCore.Qt.ElideMiddle)
+        self.Table.setGridStyle(QtCore.Qt.SolidLine)
+        self.Table.setWordWrap(True)
+        self.Table.setRowCount(0)
+        self.Table.setColumnCount(1)
+        self.Table.setObjectName("Table")
+        item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignCenter)
+        self.Table.setHorizontalHeaderItem(0, item)
+        self.Table.horizontalHeader().setCascadingSectionResizes(False)
+        self.Table.horizontalHeader().setDefaultSectionSize(140)
+        self.Table.horizontalHeader().setMinimumSectionSize(40)
+        self.Table.horizontalHeader().setStretchLastSection(True)
+        self.Table.verticalHeader().setVisible(False)
+        self.Table.verticalHeader().setDefaultSectionSize(40)
+        self.Table.verticalHeader().setHighlightSections(True)
+        self.Table.verticalHeader().setMinimumSectionSize(40)
+        self.Table.verticalHeader().setSortIndicatorShown(False)
+        self.Table.verticalHeader().setStretchLastSection(False)
+        self.Export_view = QtWidgets.QGroupBox(self.Export)
+        self.Export_view.setGeometry(QtCore.QRect(310, 10, 561, 481))
+        self.Export_view.setStyleSheet("QGroupBox#Export_view{\n"
+"    background-color: #f2f2f2;\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"  \n"
+"")
+        self.Export_view.setTitle("")
+        self.Export_view.setObjectName("Export_view")
+        self.Preview = QtWidgets.QLabel(self.Export_view)
+        self.Preview.setGeometry(QtCore.QRect(0, 60, 561, 361))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(1)
+        self.Preview.setFont(font)
+        self.Preview.setStyleSheet("QLabel#Preview {\n"
+"    color: white;\n"
+"    background-color: none;\n"
+"}")
+        self.Preview.setText("")
+        self.Preview.setAlignment(QtCore.Qt.AlignCenter)
+        self.Preview.setObjectName("Preview")
+        self.Preview_name = QtWidgets.QLabel(self.Export_view)
+        self.Preview_name.setGeometry(QtCore.QRect(20, 10, 221, 21))
+        self.Preview_name.setStyleSheet("QLabel#Preview_name {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Preview_name.setObjectName("Preview_name")
+#        self.Tab.addTab(self.Export, "") # add tab export
+        self.blank = QtWidgets.QLabel(self.centralwidget)
+        self.blank.setGeometry(QtCore.QRect(0, 0, 881, 21))
+        self.blank.setStyleSheet("QLabel {\n"
+"background-color: rgb(90, 90, 90);\n"
+"}")
+        self.blank.setText("")
+        self.blank.setObjectName("blank")
+        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox.setGeometry(QtCore.QRect(770, 5, 101, 31))
+        self.groupBox.setStyleSheet("QGroupBox {\n"
+"    background-color: rgb(45, 45, 45);\n"
+"    border: none;\n"
+"    border-radius: 15px;\n"
+"}")
+        self.groupBox.setTitle("")
+        self.groupBox.setObjectName("groupBox")
+        self.Close = QtWidgets.QPushButton(self.groupBox)
+        self.Close.setGeometry(QtCore.QRect(75, 5, 21, 21))
+        self.Close.setStyleSheet("QPushButton#Close:hover:!pressed\n"
+"{\n"
+"      background-color: rgb(167, 30, 30);\n"
+"}\n"
+"QPushButton#Close {\n"
+"    background-color: rgb(220, 60, 60);\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"")
+        self.Close.setText("")
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap("static/icon/times-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Close.setIcon(icon12)
+        self.Close.setIconSize(QtCore.QSize(16, 16))
+        self.Close.setObjectName("Close")
+        self.Minimun = QtWidgets.QPushButton(self.groupBox)
+        self.Minimun.setGeometry(QtCore.QRect(45, 5, 21, 21))
+        self.Minimun.setStyleSheet("QPushButton#Minimun:hover:!pressed\n"
+"{\n"
+"      background-color: rgb(72, 72, 72);\n"
+"}\n"
+"QPushButton#Minimun {\n"
+"    background-color: rgb(140, 140, 140);\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"")
+        self.Minimun.setText("")
+        icon13 = QtGui.QIcon()
+        icon13.addPixmap(QtGui.QPixmap("static/icon/minimum-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Minimun.setIcon(icon13)
+        self.Minimun.setObjectName("Minimun")
+        self.blank_2 = QtWidgets.QLabel(self.centralwidget)
+        self.blank_2.setGeometry(QtCore.QRect(0, 588, 881, 4))
+        self.blank_2.setStyleSheet("QLabel {\n"
+"background-color: rgb(90, 90, 90);\n"
+"}")
+        self.blank_2.setText("")
+        self.blank_2.setObjectName("blank_2")
+        # self.setCentralWidget(self.centralwidget)
+
+        # self.retranslateUi(App)
+        self.Tab.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
+        QtCore.QMetaObject.connectSlotsByName(App)
+#Tile:
+# 1.Video source 
+# 2.Result fold
+# 3.Display settings
+# 4.Crossing line counter
+# 5.Violation counter
+# 6.Left lane
+# 7.Center lane
+# 8.Right lane
+
     def retranslateUi(self, App):
         _translate = QtCore.QCoreApplication.translate
         self.dashboard.hide()
@@ -320,12 +2185,109 @@ class Ui_App(object):
         self.AppNametext.setText(_translate("App", "MOT CONTROL PANEL"))
         self.pushButton.setText(_translate("App", "LOGIN"))
         self.checkBox.setText(_translate("App", "Keep Login"))
-        self.wellcomebacktext.setText(_translate("App", "Wellcome back!"))
-        self.helloText.setText(_translate("App", "Xin Chào Bạn !"))
-        self.nameInfor.setText(_translate("App", "Nguyễn Xuân Phúc"))
-        self.dateofbirthInfor.setText(_translate("App", "01/01/2022"))
-        self.logoutButton.setText(_translate("App", "Đăng Xuất"))
+
+        # App.setWindowTitle(_translate("App", "App"))
+        self.helloText.setText(_translate("App", "Xin Chào Bạn!"))
+        self.nameInfo.setText(_translate("App", "<Tên người dùng>"))
+        self.emailLabel.setText(_translate("App", "<email>"))
+        self.logoutBtn.setText(_translate("App", "Đăng xuất"))
+        self.dateofbirthLabel.setText(_translate("App", "DD/MM/YY"))
         self.listcamPage.setText(_translate("App", "Danh sách Camera"))
-        self.videoviolationPage.setText(_translate("App", "Video vi phạm"))
-        self.ChartPage.setText(_translate("App", "Thống kê"))
-        self.createaccountPage.setText(_translate("App", "Tạo tại khoản"))
+        self.videoViolationPage.setText(_translate("App", "Video vi phạm"))
+        self.chartPage.setText(_translate("App", "Thống kê"))
+        self.createAccountPage.setText(_translate("App", "Tạo tài khoản"))
+        self.dashboard_Tab.setTabText(self.dashboard_Tab.indexOf(self.mainDashboard), _translate("App", "Trang chủ"))
+        self.filterHeader.setText(_translate("App", "BỘ LỌC"))
+        self.searchBtn.setText(_translate("App", "Tìm kiếm"))
+        self.lineEdit.setPlaceholderText(_translate("App", "  Nhập vi phạm cần tìm ..."))
+        self.label.setText(_translate("App", "Tìm theo: "))
+        self.radioButton.setText(_translate("App", "Biển xe vi phạm"))
+        self.radioButton_2.setText(_translate("App", "Tên Camera"))
+        self.radioButton_3.setText(_translate("App", "Thời gian vi phạm"))
+        self.timeFilter_label.setText(_translate("App", "Tìm theo khoảng thời gian"))
+        self.dayFilter.setText(_translate("App", "1 ngày trước"))
+        self.weekFilter.setText(_translate("App", "1 tuần trươcs"))
+        self.monthFilter.setText(_translate("App", "1 tháng trước"))
+        self.yearFilter.setText(_translate("App", "1 năm trước"))
+        self.typeFilter_Label.setText(_translate("App", "Tìm theo loại vi phạm:"))
+        self.vuotdendoBtn.setText(_translate("App", "Vượt đèn đỏ"))
+        self.dosailanduongBtn.setText(_translate("App", "Đỗ sai làn đường"))
+        self.dinguocchieuBtn.setText(_translate("App", "Đi ngược chiều"))
+        self.khongxinhanBtn.setText(_translate("App", "Không xi nhan"))
+        self.doxekhongdungnoiquydinhBtn.setText(_translate("App", "Đỗ xe không đúng nơi quy định"))
+        self.khongdoimubaohiemBtn.setText(_translate("App", "Không đội mũ bảo hiểm"))
+        item = self.violationTableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("App", "Biển số xe"))
+        item = self.violationTableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("App", "Thời gian vi phạm"))
+        item = self.violationTableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("App", "Lỗi vi phạm"))
+        item = self.violationTableWidget.horizontalHeaderItem(3)
+        item.setText(_translate("App", "Camera"))
+        __sortingEnabled = self.violationTableWidget.isSortingEnabled()
+        self.violationTableWidget.setSortingEnabled(False)
+        self.violationTableWidget.setSortingEnabled(__sortingEnabled)
+        self.chartLable.setText(_translate("App", "Chart Widget"))
+        self.dashboard_Tab.setTabText(self.dashboard_Tab.indexOf(self.violationPage), _translate("App", "Thống kê"))
+        self.camList_Label.setText(_translate("App", "Danh sách Camera"))
+        self.dashboard_Tab.setTabText(self.dashboard_Tab.indexOf(self.listCam_Page), _translate("App", "Danh sách Camera"))
+
+        # App.setWindowTitle(_translate("App", "App"))
+        # self.Filename.setText(_translate("App", "Browse your video here!"))
+        # self.Name.setText(_translate("App", "Video source"))
+        # self.Filename_2.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Name_2.setText(_translate("App", "Result folder"))
+        # self.TLable0.setText(_translate("App", "Crossing left  line 1:"))
+        # self.TLable1.setText(_translate("App", "Crossing center line 1:"))
+        # self.TLabel2.setText(_translate("App", "Crossing right line 1:"))
+        # self.Tcounter_0.setText(_translate("App", "0"))
+        # self.Tcounter_1.setText(_translate("App", "0"))
+        # self.Tcounter_2.setText(_translate("App", "0"))
+        # self.Filename_3.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Filename_4.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Filename_5.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Filename_6.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Filename_7.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Filename_8.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Name_4.setText(_translate("App", "Crossing line counter"))
+        # self.TLabel2_2.setText(_translate("App", "Crossing left line 2:"))
+        # self.TLabel2_3.setText(_translate("App", "Crossing  center line 2:"))
+        # self.TLabel2_4.setText(_translate("App", "Crossing  right line 2:"))
+        # self.Tcounter_3.setText(_translate("App", "0"))
+        # self.Tcounter_4.setText(_translate("App", "0"))
+        # self.Tcounter_5.setText(_translate("App", "0"))
+        # self.Vcounter.setText(_translate("App", "0"))
+        # self.Filename_9.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Filename_10.setText(_translate("App", "Browse your saving folder here!"))
+        # self.Vcounter_2.setText(_translate("App", "0"))
+        # self.Name_5.setText(_translate("App", "Violation counter"))
+        # self.TLabel2_5.setText(_translate("App", "Crossing the red light:"))
+        # self.TLabel2_6.setText(_translate("App", "Wrong lane:"))
+        # self.Name_3.setText(_translate("App", "Display setting"))
+        # self.ShowLabel.setText(_translate("App", "Showing the detected label on video"))
+        # self.ShowBox.setText(_translate("App", "Showing the detected box on video"))
+        # self.SaveImage.setText(_translate("App", "Save image of the vehicle in violation"))
+        # self.SaveVideo.setText(_translate("App", "Save video of the vehicle in violation"))
+        # self.turn_left_left_lane.setText(_translate("App", "Turn left"))
+        # self.go_forward_left_lane.setText(_translate("App", "Go forward"))
+        # self.turn_right_left_lane.setText(_translate("App", "Turn right"))
+        # self.red_light_left.setText(_translate("App", "Red light"))
+        # self.tabWidget.setTabText(self.tabWidget.indexOf(self.left_lane), _translate("App", "Left lane"))
+        # self.turn_right_center_lane.setText(_translate("App", "Turn right"))
+        # self.go_forwar_center_lane.setText(_translate("App", "Go forward"))
+        # self.turn_left_center_lane.setText(_translate("App", "Turn left"))
+        # self.red_light_center.setText(_translate("App", "Red light"))
+        # self.tabWidget.setTabText(self.tabWidget.indexOf(self.center_lane), _translate("App", "Center lane"))
+        # self.turn_right_right_lane.setText(_translate("App", "Turn right"))
+        # self.go_forward_right_lane.setText(_translate("App", "Go forward"))
+        # self.turn_left_right_lane.setText(_translate("App", "Turn left"))
+        # self.red_light_right.setText(_translate("App", "Red light"))
+        # self.tabWidget.setTabText(self.tabWidget.indexOf(self.right_lane), _translate("App", "Right lane"))
+        # self.Tab.setTabText(self.Tab.indexOf(self.Setting), _translate("App", "Setting"))
+        # self.Tab.setTabText(self.Tab.indexOf(self.Draw), _translate("App", "Draw"))
+        # #self.Violation_name.setText(_translate("App", "Violation file name here!"))
+        # #self.Tab.setTabText(self.Tab.indexOf(self.Monitor), _translate("App", "Home"))
+        # item = self.Table.horizontalHeaderItem(0)
+        # # item.setText(_translate("App", "ID"))
+        # # self.Preview_name.setText(_translate("App", "Double click each ID to show the image here!"))
+        # #self.Tab.setTabText(self.Tab.indexOf(self.Export), _translate("App", "Export"))
